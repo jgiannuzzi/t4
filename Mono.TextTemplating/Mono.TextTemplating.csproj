@@ -1,6 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFrameworks>netstandard2.0;net472</TargetFrameworks>
+    <TargetFrameworks>netstandard2.0</TargetFrameworks>
+    <TargetFrameworks Condition="'$OS)'=='Windows_NT'">$(TargetFrameworks);netstandard2.0</TargetFrameworks>
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>..\TextTemplating.snk</AssemblyOriginatorKeyFile>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
@@ -15,7 +16,7 @@ This package allows embedding the T4 engine in an application.
 * To install in a project as a `DotNetCliToolReference`, use `dotnet-t4-project-tool` instead.]]>
     </Description>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <DefineConstants Condition="'$(TargetFramework)'=='net472'">$(DefineConstants);FEATURE_APPDOMAINS</DefineConstants>
+    <DefineConstants Condition="'$(TargetFramework)'=='net47'">$(DefineConstants);FEATURE_APPDOMAINS</DefineConstants>
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
     <IncludeSymbols>true</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
